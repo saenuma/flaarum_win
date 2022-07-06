@@ -6,6 +6,7 @@ import (
     "strings"
     "time"
     "net/http"
+    "github.com/sqweek/dialog"
     "github.com/getlantern/systray"
 )
 
@@ -24,6 +25,7 @@ func onReady() {
   systray.SetTitle("Flaarum: a comfortable database")
   reload := systray.AddMenuItem("Reload Services", "Reloads all Services")
   updates := systray.AddMenuItem("Updates", "Check for updates")
+  systray.AddSeparator()
   mQuit := systray.AddMenuItem("Quit", "Quits this app")
 
   go func() {
@@ -54,8 +56,7 @@ func onExit() {
 }
 
 func checkAndNofityOfUpdates() {
-  fmt.Println("has update")
-  
+
   newVersionStr := ""
   resp, err := http.Get("https://sae.ng/static/wapps/flaarum.txt")
   if err != nil {
@@ -83,9 +84,7 @@ func checkAndNofityOfUpdates() {
   }
 
   if hnv == true {
-    fmt.Println("flaarum has an update.")
-    fmt.Println("please visit 'https://sae.ng/flaarumtuts/install' for update instructions." )
-    fmt.Println()
+    dialog.Message("%s", "Please visit 'https://sae.ng/flaarumtuts/install' to download a new installer.").Title("Flaarum has an Update").YesNo()
   }
 
 }

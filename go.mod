@@ -2,9 +2,13 @@ module github.com/saenuma/flaarum_win
 
 go 1.18
 
-require github.com/getlantern/systray v1.2.1
+require (
+	github.com/getlantern/systray v1.2.1
+	github.com/sqweek/dialog v0.0.0-20220504154117-be45b268883a
+)
 
 require (
+	github.com/TheTitanrain/w32 v0.0.0-20180517000239-4f5cfb03fabf // indirect
 	github.com/getlantern/context v0.0.0-20190109183933-c447772a6520 // indirect
 	github.com/getlantern/errors v0.0.0-20190325191628-abdb3e3e36f7 // indirect
 	github.com/getlantern/golog v0.0.0-20190830074920-4ef2e798c2d7 // indirect
