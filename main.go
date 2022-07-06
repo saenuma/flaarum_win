@@ -6,6 +6,7 @@ import (
   "strings"
   "time"
   "net/http"
+  "os/exec"
   "github.com/sqweek/dialog"
   "github.com/getlantern/systray"
 )
@@ -26,7 +27,7 @@ func onReady() {
 
   go func() {
     exec.Command("C:\\Program Files (x86)\\Flaarum\\flstore.exe").Run()
-  }
+  }()
 
   go func() {
     for {
