@@ -40,6 +40,8 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Source: "C:\Users\Bankole Ojo\p\flaarum_win\bin\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Bankole Ojo\p\flaarum\wbin\flcli.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Bankole Ojo\p\flaarum\wbin\flstore.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Bankole Ojo\p\flaarum\store\https-server.crt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Bankole Ojo\p\flaarum\store\https-server.key"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
@@ -48,4 +50,3 @@ Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: de
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
-
