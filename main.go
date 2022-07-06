@@ -1,51 +1,44 @@
 package main
 
 import (
-    "fmt"
-    "io"
-    "strings"
-    "time"
-    "net/http"
-    "github.com/sqweek/dialog"
-    "github.com/getlantern/systray"
+  "fmt"
+  "io"
+  "strings"
+  "time"
+  "net/http"
+  "github.com/sqweek/dialog"
+  "github.com/getlantern/systray"
 )
 
 const VersionFormat = "20060102T150405MST"
 
 func main() {
-    systray.Run(onReady, onExit)
+  systray.Run(onReady, onExit)
 }
 
-func loadAllServices() {
-
-}
 
 func onReady() {
   systray.SetIcon(flaarumLogoBytes)
   systray.SetTitle("Flaarum: a comfortable database")
-  reload := systray.AddMenuItem("Reload Services", "Reloads all Services")
   updates := systray.AddMenuItem("Updates", "Check for updates")
   systray.AddSeparator()
   mQuit := systray.AddMenuItem("Quit", "Quits this app")
 
   go func() {
+    exec.Command("C:\\Program Files (x86)\\Flaarum\\flstore.exe").Run()
+  }
+
+  go func() {
     for {
       select {
-      case <-reload.ClickedCh:
-        loadAllServices()
-      // case <-hcmcTime.ClickedCh:
-      //   timezone = "Asia/Ho_Chi_Minh"
-      // case <-sydTime.ClickedCh:
-      //   timezone = "Australia/Sydney"
-      // case <-gdlTime.ClickedCh:
-      //   timezone = "America/Mexico_City"
-      // case <-sfTime.ClickedCh:
-      //   timezone = "America/Los_Angeles"
+
       case <-updates.ClickedCh:
         checkAndNofityOfUpdates()
+
       case <-mQuit.ClickedCh:
         systray.Quit()
         return
+
       }
     }
   }()
@@ -56,7 +49,6 @@ func onExit() {
 }
 
 func checkAndNofityOfUpdates() {
-
   newVersionStr := ""
   resp, err := http.Get("https://sae.ng/static/wapps/flaarum.txt")
   if err != nil {
