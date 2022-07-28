@@ -21,10 +21,10 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 DisableDirPage=yes
 DisableProgramGroupPage=yes
-LicenseFile=C:\Users\Bankole Ojo\p\flaarum_win\LICENSE
+LicenseFile=C:\Users\banko\p\flaarum_win\LICENSE
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputDir=C:\Users\Bankole Ojo\p\flaarum_win\bin
+OutputDir=C:\Users\banko\p\flaarum_win\bin
 OutputBaseFilename=flaarum_setup
 Compression=lzma
 SolidCompression=yes
@@ -37,11 +37,11 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\Bankole Ojo\p\flaarum_win\bin\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Bankole Ojo\p\flaarum\wbin\flcli.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Bankole Ojo\p\flaarum\wbin\flstore.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Bankole Ojo\p\flaarum\store\https-server.crt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Bankole Ojo\p\flaarum\store\https-server.key"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\banko\p\flaarum_win\bin\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\banko\p\flaarum\wbin\flcli.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\banko\p\flaarum\wbin\flstore.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\banko\p\flaarum\store\https-server.crt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\banko\p\flaarum\store\https-server.key"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
